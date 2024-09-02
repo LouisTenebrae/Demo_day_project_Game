@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bipm8bu3fad"]
+
+[ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="1_68ria"]
+[ext_resource type="Texture2D" uid="uid://dn7pf4tqri5yg" path="res://sprites/Tilesets/oak_woods_tileset.png" id="2_2lwht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3n1m"]
+size = Vector2(94, 24)
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="KnightPlayer" parent="." instance=ExtResource("1_68ria")]
+position = Vector2(1, 2)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="temp_plat" type="Node2D" parent="."]
+
+[node name="platform_1" type="StaticBody2D" parent="temp_plat"]
+
+[node name="Sprite2D" type="Sprite2D" parent="temp_plat/platform_1"]
+position = Vector2(170, 59)
+texture = ExtResource("2_2lwht")
+region_enabled = true
+region_rect = Rect2(121, 0, 94, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp_plat/platform_1"]
+position = Vector2(170, 59)
+shape = SubResource("RectangleShape2D_u3n1m")
+
+[node name="platform_2" type="StaticBody2D" parent="temp_plat"]
+
+[node name="Sprite2D" type="Sprite2D" parent="temp_plat/platform_2"]
+position = Vector2(-18, 59)
+scale = Vector2(1, 1)
+texture = ExtResource("2_2lwht")
+region_enabled = true
+region_rect = Rect2(121, 0, 94, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp_plat/platform_2"]
+position = Vector2(-18, 59)
+shape = SubResource("RectangleShape2D_u3n1m")
+
+[node name="platform_3" type="StaticBody2D" parent="temp_plat"]
+
+[node name="Sprite2D" type="Sprite2D" parent="temp_plat/platform_3"]
+position = Vector2(76, 59)
+texture = ExtResource("2_2lwht")
+region_enabled = true
+region_rect = Rect2(121, 0, 94, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temp_plat/platform_3"]
+position = Vector2(76, 59)
+shape = SubResource("RectangleShape2D_u3n1m")

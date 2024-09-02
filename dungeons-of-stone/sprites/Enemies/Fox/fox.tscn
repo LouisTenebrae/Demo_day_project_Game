@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4e6xjdud6i7e"]
+
+[ext_resource type="Texture2D" uid="uid://b6kf2u3i5cipm" path="res://Enemies/Fox/fox.png" id="1_qmblh"]
+[ext_resource type="Script" path="res://Enemies/Fox/fox.gd" id="1_xppr0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kph7i"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(0, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti41d"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(80, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1x6e"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(160, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaahl"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(240, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsfgp"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(320, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgbdj"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(400, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efgyt"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(480, 0, 80, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31kco"]
+atlas = ExtResource("1_qmblh")
+region = Rect2(560, 0, 80, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mufrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kph7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti41d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1x6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaahl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsfgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgbdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efgyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31kco")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb6wk"]
+size = Vector2(32, 20)
+
+[node name="Fox" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_xppr0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_mufrb")
+autoplay = "default"
+frame_progress = 0.8232
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cb6wk")
+
+[node name="GroundDetectorRayCast" type="RayCast2D" parent="."]
+position = Vector2(15, 0)
+target_position = Vector2(0, 40)
