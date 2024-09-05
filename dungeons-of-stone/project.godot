@@ -25,6 +25,11 @@ window/size/mode=3
 
 project/assembly_name="Dungeons of Stone"
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Ground"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
