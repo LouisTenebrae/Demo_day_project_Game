@@ -1,6 +1,8 @@
 extends Camera2D
 
 @onready var player = $"../Player"
+@export var camera: camera_state
+enum camera_state {FOLLOW,PANNING}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +11,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	camera_panning()
+	match camera_state:
+		camera_state.FOLLOW:
+			camera_follow()
+		camera_state.PANNING:
+			camera_panning()
 
 func camera_panning():
 	anchor_mode = Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
