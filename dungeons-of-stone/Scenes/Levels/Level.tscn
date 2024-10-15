@@ -1,14 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch4c1h40wnuqp"]
+[gd_scene load_steps=5 format=3 uid="uid://ch4c1h40wnuqp"]
 
-[ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="1_2qkxr"]
-[ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_xmc4n"]
+[ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_i0jf1"]
+[ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="2_l6ud7"]
+[ext_resource type="Script" path="res://Script/UI/GUI.gd" id="3_ji40s"]
+[ext_resource type="Texture2D" uid="uid://dl2avhcrppypl" path="res://sprites/Character/HeartSpriteSheet.png" id="4_lia6q"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 325)
 anchor_mode = 0
-script = ExtResource("1_xmc4n")
+script = ExtResource("1_i0jf1")
 
-[node name="Player" parent="." instance=ExtResource("1_2qkxr")]
+[node name="Player" parent="." instance=ExtResource("2_l6ud7")]
 position = Vector2(576, 325)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource("3_ji40s")
+
+[node name="Life" type="Sprite2D" parent="GUI"]
+texture_filter = 1
+position = Vector2(56, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("4_lia6q")
+hframes = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI"]

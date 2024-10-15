@@ -1262,6 +1262,7 @@ size = Vector2(38.5, 41)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_dh51k")
+jump_force = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 20)
@@ -1281,6 +1282,8 @@ autoplay = "idle"
 frame = 2
 
 [node name="Sword" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
 
 [node name="CollisionSword" type="CollisionShape2D" parent="Sword"]
 position = Vector2(40.75, 18.5)
