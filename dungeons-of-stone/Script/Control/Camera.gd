@@ -5,17 +5,15 @@ extends Camera2D
 enum camera_state {FOLLOW,PANNING}
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	player = get_node("../Player")
+	make_current()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	match camera_state:
-		camera_state.FOLLOW:
-			camera_follow()
-		camera_state.PANNING:
-			camera_panning()
+func _process(delta):
+	if player:  
+		global_position = player.global_position
 
 func camera_panning():
 	anchor_mode = Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
@@ -31,3 +29,4 @@ func camera_panning():
 func camera_follow():
 	anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
 	position = player.position
+	
