@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://btrd7to8etc3p"]
 
-[ext_resource type="Script" path="res://Levels/title_screen.gd" id="1_jqcoo"]
+[ext_resource type="Script" path="res://Scenes/Levels/title_screen.gd" id="1_jqcoo"]
 [ext_resource type="Texture2D" uid="uid://3xm8vjit6c5b" path="res://sprites/TitleScreenImg/TitleScreenBckg.jpeg" id="2_poc6f"]
 [ext_resource type="Texture2D" uid="uid://pm2ry3duila7" path="res://sprites/TitleScreenImg/pixil-frame-0 (2).png" id="3_lckim"]
 

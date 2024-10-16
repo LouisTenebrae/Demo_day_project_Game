@@ -1,47 +1,47 @@
 [gd_scene load_steps=81 format=4 uid="uid://b4bipm8bu3fad"]
 
-[ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="1_68ria"]
-[ext_resource type="Texture2D" uid="uid://dn7pf4tqri5yg" path="res://sprites/Tilesets/oak_woods_tileset.png" id="2_2lwht"]
-[ext_resource type="Texture2D" uid="uid://4mtbw0mkn8nn" path="res://sprites/Tilesets/tileset.png" id="3_pcpj2"]
-[ext_resource type="Texture2D" uid="uid://dqub74go4hv8b" path="res://sprites/Tilesets/Gothic-Castle-Files/PNG/layers/gothic-castle-background.png" id="4_ubwyu"]
-[ext_resource type="Texture2D" uid="uid://de1hlus7obsql" path="res://sprites/Tilesets/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" id="5_rmwri"]
-[ext_resource type="Texture2D" uid="uid://dphjkh3l8dn0f" path="res://sprites/Tilesets/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-tileset.png" id="6_nwsed"]
-[ext_resource type="Texture2D" uid="uid://dyiplgbhcmvoj" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/clouds.png" id="7_i055x"]
-[ext_resource type="Texture2D" uid="uid://cub65x0y0ym76" path="res://sprites/Backgrounds/MountainsLayers/mountains.png" id="8_q0i7g"]
-[ext_resource type="Texture2D" uid="uid://nei8g3fblyr7" path="res://sprites/Backgrounds/MountainsLayers/near-clouds.png" id="9_geu72"]
-[ext_resource type="Texture2D" uid="uid://cidgla3oqkmoa" path="res://sprites/Backgrounds/MountainsLayers/sky.png" id="10_remr0"]
-[ext_resource type="Texture2D" uid="uid://dxjs1s2ge2yl0" path="res://sprites/Backgrounds/MountainsLayers/trees.png" id="11_64l53"]
-[ext_resource type="Texture2D" uid="uid://d4cpoymsis3y7" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background1.png" id="12_udwho"]
-[ext_resource type="Texture2D" uid="uid://c7cbo3soenpp7" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background2.png" id="13_lngfy"]
-[ext_resource type="Texture2D" uid="uid://dexsh51fkjr7v" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background3.png" id="14_47xpp"]
-[ext_resource type="Texture2D" uid="uid://nqmti2hhd4h0" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background4a.png" id="15_1c86t"]
-[ext_resource type="Texture2D" uid="uid://caikkpvp8o4dq" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background4b.png" id="16_ic0fc"]
-[ext_resource type="Texture2D" uid="uid://cxfjwvr0ifdmq" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/mainlev_build.png" id="17_6yx0s"]
-[ext_resource type="Texture2D" uid="uid://bfa3bchhtvbq0" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/tiles.png" id="18_n77v7"]
-[ext_resource type="Texture2D" uid="uid://d4koyn6uhut6e" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/props1.png" id="19_ob557"]
-[ext_resource type="Texture2D" uid="uid://clhiy7ba5in3e" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/props2.png" id="20_vs0bj"]
-[ext_resource type="Texture2D" uid="uid://c450xu31cymxh" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/town.png" id="21_gmmvo"]
-[ext_resource type="Texture2D" uid="uid://dr8m01bs38qqx" path="res://sprites/Tilesets/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="22_v508p"]
-[ext_resource type="Texture2D" uid="uid://c71w4ip6smiqc" path="res://sprites/Backgrounds/background/background_layer_1.png" id="23_xdhg8"]
-[ext_resource type="Texture2D" uid="uid://bjh4qblel2tgq" path="res://sprites/Backgrounds/background/background_layer_2.png" id="24_fmf42"]
-[ext_resource type="Texture2D" uid="uid://dyeulyjaflp3g" path="res://sprites/Backgrounds/background/background_layer_3.png" id="25_6vyj5"]
-[ext_resource type="Texture2D" uid="uid://bbw3l7ns3qacb" path="res://sprites/Backgrounds/MountainsLayers/far-clouds.png" id="26_cncvq"]
-[ext_resource type="Texture2D" uid="uid://bcnsdxg457gf4" path="res://sprites/Backgrounds/MountainsLayers/far-mountains.png" id="27_t7ef0"]
-[ext_resource type="Texture2D" uid="uid://dobmu6pd443i2" path="res://sprites/Tilesets/decorations/fence_1.png" id="28_nxy86"]
-[ext_resource type="Texture2D" uid="uid://ekroao6tk082" path="res://sprites/Tilesets/decorations/fence_2.png" id="29_pwpes"]
-[ext_resource type="Texture2D" uid="uid://b68vb7w10qhk4" path="res://sprites/Tilesets/decorations/shop_anim.png" id="30_covxw"]
-[ext_resource type="Texture2D" uid="uid://ddg1jyh11x8xl" path="res://sprites/Tilesets/decorations/sign.png" id="31_a2dnt"]
-[ext_resource type="Texture2D" uid="uid://ugb65pixq1i1" path="res://sprites/Tilesets/decorations/grass_1.png" id="32_wtrtj"]
-[ext_resource type="Texture2D" uid="uid://brim186rbxrv2" path="res://sprites/Tilesets/decorations/grass_2.png" id="33_5bs6u"]
-[ext_resource type="Texture2D" uid="uid://31yykvt8sfnn" path="res://sprites/Tilesets/decorations/grass_3.png" id="34_pgmpu"]
-[ext_resource type="Texture2D" uid="uid://chjl1siqkjuka" path="res://sprites/Tilesets/decorations/lamp.png" id="35_ylr5g"]
-[ext_resource type="Texture2D" uid="uid://dk85q71r2jjln" path="res://sprites/Tilesets/decorations/rock_1.png" id="36_x2a43"]
-[ext_resource type="Texture2D" uid="uid://dylg546r8hq6a" path="res://sprites/Tilesets/decorations/rock_2.png" id="37_j2288"]
-[ext_resource type="Texture2D" uid="uid://duqhj80gypaxt" path="res://sprites/Tilesets/decorations/rock_3.png" id="38_0dtn7"]
-[ext_resource type="Texture2D" uid="uid://cn1xnnlsln5wx" path="res://sprites/Tilesets/decorations/shop.png" id="39_u0xbh"]
+[ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="1_8kf52"]
+[ext_resource type="Texture2D" uid="uid://dn7pf4tqri5yg" path="res://sprites/Tilesets/oak_woods_tileset.png" id="2_qoc1m"]
+[ext_resource type="Texture2D" uid="uid://4mtbw0mkn8nn" path="res://sprites/Tilesets/tileset.png" id="3_nfbee"]
+[ext_resource type="Texture2D" uid="uid://dphjkh3l8dn0f" path="res://sprites/Tilesets/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-tileset.png" id="4_558ax"]
+[ext_resource type="Texture2D" uid="uid://de1hlus7obsql" path="res://sprites/Tilesets/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" id="5_wp7ps"]
+[ext_resource type="Texture2D" uid="uid://dqub74go4hv8b" path="res://sprites/Tilesets/Gothic-Castle-Files/PNG/layers/gothic-castle-background.png" id="6_77bso"]
+[ext_resource type="Texture2D" uid="uid://dyiplgbhcmvoj" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/clouds.png" id="7_007ig"]
+[ext_resource type="Texture2D" uid="uid://cub65x0y0ym76" path="res://sprites/Backgrounds/MountainsLayers/mountains.png" id="8_7wlmj"]
+[ext_resource type="Texture2D" uid="uid://nei8g3fblyr7" path="res://sprites/Backgrounds/MountainsLayers/near-clouds.png" id="9_sjr50"]
+[ext_resource type="Texture2D" uid="uid://cidgla3oqkmoa" path="res://sprites/Backgrounds/MountainsLayers/sky.png" id="10_ouj4p"]
+[ext_resource type="Texture2D" uid="uid://dxjs1s2ge2yl0" path="res://sprites/Backgrounds/MountainsLayers/trees.png" id="11_v2q7m"]
+[ext_resource type="Texture2D" uid="uid://d4cpoymsis3y7" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background1.png" id="12_n3kyw"]
+[ext_resource type="Texture2D" uid="uid://c7cbo3soenpp7" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background2.png" id="13_hpmid"]
+[ext_resource type="Texture2D" uid="uid://dexsh51fkjr7v" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background3.png" id="14_cw730"]
+[ext_resource type="Texture2D" uid="uid://nqmti2hhd4h0" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background4a.png" id="15_lmu43"]
+[ext_resource type="Texture2D" uid="uid://caikkpvp8o4dq" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background4b.png" id="16_lxlq6"]
+[ext_resource type="Texture2D" uid="uid://cxfjwvr0ifdmq" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/mainlev_build.png" id="17_o8dkl"]
+[ext_resource type="Texture2D" uid="uid://bfa3bchhtvbq0" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/tiles.png" id="18_5mpij"]
+[ext_resource type="Texture2D" uid="uid://d4koyn6uhut6e" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/props1.png" id="19_fqpr8"]
+[ext_resource type="Texture2D" uid="uid://clhiy7ba5in3e" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/props2.png" id="20_1hq3t"]
+[ext_resource type="Texture2D" uid="uid://c450xu31cymxh" path="res://sprites/Tilesets/Gothic-Horror-Files/PNG/layers/town.png" id="21_54rdx"]
+[ext_resource type="Texture2D" uid="uid://dr8m01bs38qqx" path="res://sprites/Tilesets/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-background.png" id="22_hydwv"]
+[ext_resource type="Texture2D" uid="uid://c71w4ip6smiqc" path="res://sprites/Backgrounds/background/background_layer_1.png" id="23_kohjf"]
+[ext_resource type="Texture2D" uid="uid://bjh4qblel2tgq" path="res://sprites/Backgrounds/background/background_layer_2.png" id="24_btvn3"]
+[ext_resource type="Texture2D" uid="uid://dyeulyjaflp3g" path="res://sprites/Backgrounds/background/background_layer_3.png" id="25_h0252"]
+[ext_resource type="Texture2D" uid="uid://bbw3l7ns3qacb" path="res://sprites/Backgrounds/MountainsLayers/far-clouds.png" id="26_ygs5m"]
+[ext_resource type="Texture2D" uid="uid://bcnsdxg457gf4" path="res://sprites/Backgrounds/MountainsLayers/far-mountains.png" id="27_r7y4x"]
+[ext_resource type="Texture2D" uid="uid://dobmu6pd443i2" path="res://sprites/Tilesets/decorations/fence_1.png" id="28_7l1ry"]
+[ext_resource type="Texture2D" uid="uid://ekroao6tk082" path="res://sprites/Tilesets/decorations/fence_2.png" id="29_t5n1b"]
+[ext_resource type="Texture2D" uid="uid://b68vb7w10qhk4" path="res://sprites/Tilesets/decorations/shop_anim.png" id="30_urrbf"]
+[ext_resource type="Texture2D" uid="uid://ddg1jyh11x8xl" path="res://sprites/Tilesets/decorations/sign.png" id="31_yvwyu"]
+[ext_resource type="Texture2D" uid="uid://ugb65pixq1i1" path="res://sprites/Tilesets/decorations/grass_1.png" id="32_51ul8"]
+[ext_resource type="Texture2D" uid="uid://brim186rbxrv2" path="res://sprites/Tilesets/decorations/grass_2.png" id="33_woc1p"]
+[ext_resource type="Texture2D" uid="uid://31yykvt8sfnn" path="res://sprites/Tilesets/decorations/grass_3.png" id="34_1m4xr"]
+[ext_resource type="Texture2D" uid="uid://chjl1siqkjuka" path="res://sprites/Tilesets/decorations/lamp.png" id="35_xdvqg"]
+[ext_resource type="Texture2D" uid="uid://dk85q71r2jjln" path="res://sprites/Tilesets/decorations/rock_1.png" id="36_vy3v4"]
+[ext_resource type="Texture2D" uid="uid://dylg546r8hq6a" path="res://sprites/Tilesets/decorations/rock_2.png" id="37_q6o83"]
+[ext_resource type="Texture2D" uid="uid://duqhj80gypaxt" path="res://sprites/Tilesets/decorations/rock_3.png" id="38_4n5xw"]
+[ext_resource type="Texture2D" uid="uid://cn1xnnlsln5wx" path="res://sprites/Tilesets/decorations/shop.png" id="39_t5ckx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiura"]
-texture = ExtResource("2_2lwht")
+texture = ExtResource("2_qoc1m")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -549,7 +549,7 @@ texture = ExtResource("2_2lwht")
 30:21/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eo6oo"]
-texture = ExtResource("3_pcpj2")
+texture = ExtResource("3_nfbee")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
@@ -1224,7 +1224,7 @@ texture = ExtResource("3_pcpj2")
 2:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2o8r"]
-texture = ExtResource("6_nwsed")
+texture = ExtResource("4_558ax")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1499,7 +1499,7 @@ texture = ExtResource("6_nwsed")
 0:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35cla"]
-texture = ExtResource("5_rmwri")
+texture = ExtResource("5_wp7ps")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
@@ -1583,7 +1583,7 @@ sources/2 = SubResource("TileSetAtlasSource_y2o8r")
 sources/3 = SubResource("TileSetAtlasSource_35cla")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_11x5u"]
-texture = ExtResource("4_ubwyu")
+texture = ExtResource("6_77bso")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1996,7 +1996,7 @@ texture = ExtResource("4_ubwyu")
 25:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iavdv"]
-texture = ExtResource("7_i055x")
+texture = ExtResource("7_007ig")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2175,7 +2175,7 @@ texture = ExtResource("7_i055x")
 15:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx4gh"]
-texture = ExtResource("8_q0i7g")
+texture = ExtResource("8_7wlmj")
 7:2/0 = 0
 8:2/0 = 0
 6:3/0 = 0
@@ -2352,7 +2352,7 @@ texture = ExtResource("8_q0i7g")
 19:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_373hh"]
-texture = ExtResource("9_geu72")
+texture = ExtResource("9_sjr50")
 3:4/0 = 0
 4:4/0 = 0
 2:5/0 = 0
@@ -2444,7 +2444,7 @@ texture = ExtResource("9_geu72")
 8:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frnop"]
-texture = ExtResource("10_remr0")
+texture = ExtResource("10_ouj4p")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2747,7 +2747,7 @@ texture = ExtResource("10_remr0")
 19:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u7ae0"]
-texture = ExtResource("11_64l53")
+texture = ExtResource("11_v2q7m")
 1:6/0 = 0
 2:6/0 = 0
 5:6/0 = 0
@@ -2851,7 +2851,7 @@ texture = ExtResource("11_64l53")
 14:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne4gj"]
-texture = ExtResource("12_udwho")
+texture = ExtResource("12_n3kyw")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4654,7 +4654,7 @@ texture = ExtResource("12_udwho")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqlry"]
-texture = ExtResource("13_lngfy")
+texture = ExtResource("13_hpmid")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -6190,7 +6190,7 @@ texture = ExtResource("13_lngfy")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08ait"]
-texture = ExtResource("14_47xpp")
+texture = ExtResource("14_cw730")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -7666,7 +7666,7 @@ texture = ExtResource("14_47xpp")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ji7oc"]
-texture = ExtResource("15_1c86t")
+texture = ExtResource("15_lmu43")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -8708,7 +8708,7 @@ texture = ExtResource("15_1c86t")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3ho3"]
-texture = ExtResource("16_ic0fc")
+texture = ExtResource("16_lxlq6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -9907,7 +9907,7 @@ texture = ExtResource("16_ic0fc")
 59:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6b3o"]
-texture = ExtResource("17_6yx0s")
+texture = ExtResource("17_o8dkl")
 6:1/0 = 0
 20:1/0 = 0
 21:1/0 = 0
@@ -10815,7 +10815,7 @@ texture = ExtResource("17_6yx0s")
 29:63/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpwhb"]
-texture = ExtResource("18_n77v7")
+texture = ExtResource("18_5mpij")
 0:0/0 = 0
 26:0/0 = 0
 30:0/0 = 0
@@ -11235,7 +11235,7 @@ texture = ExtResource("18_n77v7")
 63:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjiqv"]
-texture = ExtResource("19_ob557")
+texture = ExtResource("19_fqpr8")
 5:1/0 = 0
 6:1/0 = 0
 4:2/0 = 0
@@ -13529,7 +13529,7 @@ texture = ExtResource("19_ob557")
 62:79/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3iww"]
-texture = ExtResource("20_vs0bj")
+texture = ExtResource("20_1hq3t")
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
@@ -15093,7 +15093,7 @@ texture = ExtResource("20_vs0bj")
 62:62/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qigk"]
-texture = ExtResource("21_gmmvo")
+texture = ExtResource("21_54rdx")
 13:1/0 = 0
 12:2/0 = 0
 13:2/0 = 0
@@ -15212,7 +15212,7 @@ texture = ExtResource("21_gmmvo")
 15:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_74b7s"]
-texture = ExtResource("22_v508p")
+texture = ExtResource("22_hydwv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -16355,7 +16355,7 @@ texture = ExtResource("22_v508p")
 59:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1xh3"]
-texture = ExtResource("23_xdhg8")
+texture = ExtResource("23_kohjf")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -16578,7 +16578,7 @@ texture = ExtResource("23_xdhg8")
 19:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggii6"]
-texture = ExtResource("24_fmf42")
+texture = ExtResource("24_btvn3")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -16758,7 +16758,7 @@ texture = ExtResource("24_fmf42")
 19:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0uir"]
-texture = ExtResource("25_6vyj5")
+texture = ExtResource("25_h0252")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -16916,7 +16916,7 @@ texture = ExtResource("25_6vyj5")
 19:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_um7ya"]
-texture = ExtResource("26_cncvq")
+texture = ExtResource("26_ygs5m")
 6:3/0 = 0
 7:3/0 = 0
 0:4/0 = 0
@@ -17009,7 +17009,7 @@ texture = ExtResource("26_cncvq")
 7:14/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06518"]
-texture = ExtResource("27_t7ef0")
+texture = ExtResource("27_r7y4x")
 5:5/0 = 0
 6:5/0 = 0
 0:6/0 = 0
@@ -17127,21 +17127,21 @@ sources/20 = SubResource("TileSetAtlasSource_kjiqv")
 sources/21 = SubResource("TileSetAtlasSource_w3iww")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tvyj"]
-texture = ExtResource("28_nxy86")
+texture = ExtResource("28_7l1ry")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yt2cl"]
-texture = ExtResource("29_pwpes")
+texture = ExtResource("29_t5n1b")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j76ie"]
-texture = ExtResource("30_covxw")
+texture = ExtResource("30_urrbf")
 1:0/0 = 0
 38:0/0 = 0
 1:1/0 = 0
@@ -17421,37 +17421,37 @@ texture = ExtResource("30_covxw")
 43:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8slkt"]
-texture = ExtResource("31_a2dnt")
+texture = ExtResource("31_yvwyu")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tg08v"]
-texture = ExtResource("32_wtrtj")
+texture = ExtResource("32_51ul8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_trfka"]
-texture = ExtResource("33_5bs6u")
+texture = ExtResource("33_woc1p")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xikk6"]
-texture = ExtResource("34_pgmpu")
+texture = ExtResource("34_1m4xr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiwdo"]
-texture = ExtResource("35_ylr5g")
+texture = ExtResource("35_xdvqg")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwlt7"]
-texture = ExtResource("36_x2a43")
+texture = ExtResource("36_vy3v4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrfju"]
-texture = ExtResource("37_j2288")
+texture = ExtResource("37_q6o83")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ile5o"]
-texture = ExtResource("38_0dtn7")
+texture = ExtResource("38_4n5xw")
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoqsu"]
-texture = ExtResource("39_u0xbh")
+texture = ExtResource("39_t5ckx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -17511,7 +17511,7 @@ sources/11 = SubResource("TileSetAtlasSource_8slkt")
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="KnightPlayer" parent="." instance=ExtResource("1_68ria")]
+[node name="KnightPlayer" parent="." instance=ExtResource("1_8kf52")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		player_state.MOVE:
 			movement(delta)
 		player_state.SWORD:
-			sword()
+			sword(delta)
 
 func movement(delta):
 	input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -79,8 +79,27 @@ func movement(delta):
 func gravity_force():
 	velocity.y += gravity
 
-func sword():
+func sword(delta):
 	$KnightPlayer.play("attack1")
+	input_movement(delta)
+
+func input_movement(delta):
+	input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
+	if input != 0:
+		if input > 0:
+			velocity.x += speed * delta
+			velocity.x = clamp(speed, 100.0, speed)
+			
+		if input < 0:
+			velocity.x -= speed * delta
+			velocity.x = clamp(-speed, 100.0, -speed)
+		if input == 0:
+			velocity.x = 0
+
+		gravity_force()
+		move_and_slide()
+
+
 func reset_state():
 	current_state = player_state.MOVE
