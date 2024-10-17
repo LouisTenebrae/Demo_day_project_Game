@@ -17,6 +17,10 @@ enum player_state {MOVE, SWORD, DEAD}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sword/CollisionSword.disabled = true
+	Global.playerBody = self
+	Global.playerDamageAmount = 5
+	Global.playerDamageZone = $Sword/CollisionSword
+	Global.playerHitbox = $CollisionShape2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

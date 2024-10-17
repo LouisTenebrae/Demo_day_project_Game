@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://btrd7to8etc3p"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/title_screen.gd" id="1_jqcoo"]
+[ext_resource type="Texture2D" uid="uid://3xm8vjit6c5b" path="res://sprites/TitleScreenImg/TitleScreenBckg.jpeg" id="2_poc6f"]
+[ext_resource type="Texture2D" uid="uid://pm2ry3duila7" path="res://sprites/TitleScreenImg/pixil-frame-0 (2).png" id="3_lckim"]
+
+[sub_resource type="SystemFont" id="SystemFont_4cxju"]
+font_names = PackedStringArray("Alkhemikal")
+
+[sub_resource type="Theme" id="Theme_65em7"]
+default_font = SubResource("SystemFont_4cxju")
+
+[sub_resource type="SystemFont" id="SystemFont_864b3"]
+font_names = PackedStringArray("Alkhemikal")
+
+[sub_resource type="Theme" id="Theme_mcxwm"]
+default_font = SubResource("SystemFont_864b3")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqcoo")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 340.0
+offset_right = 674.0
+offset_bottom = 389.0
+theme = SubResource("Theme_65em7")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 405.0
+offset_right = 675.0
+offset_bottom = 455.0
+theme = SubResource("Theme_mcxwm")
+text = "Quit"
+
+[node name="TitleScreenBckg" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(576.75, 324.75)
+scale = Vector2(0.643694, 0.633301)
+texture = ExtResource("2_poc6f")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+position = Vector2(599, 240)
+scale = Vector2(0.8025, 0.617683)
+texture = ExtResource("3_lckim")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

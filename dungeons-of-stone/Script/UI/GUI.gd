@@ -13,7 +13,7 @@ func _ready() -> void:
 		$Life.add_child(new_heart)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	display_hearts()
 
 func display_hearts():
