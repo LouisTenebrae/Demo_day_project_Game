@@ -1,104 +1,79 @@
-class_name Enemy_Slime extends CharacterBody2D
+extends CharacterBody2D
 
-@export var Health = 10
-@export var speed = 80.0
+@export var speed = 50
 @export var gravity = 10
-var health_min = 0.0
+@export var health = 5
+var dir
 
-var player = CharacterBody2D
-var player_in_area = false
-
-
-var slime_chasing: bool
-var slime_dead: bool = false
-var taking_damage: bool = false
-var dealing_damage:bool = false
-
-var dir: Vector2
-@export var knockback_force = -20
-var is_roaming: bool = true
+var current_state
+enum slime_states {IDLE, RIGHT, LEFT, DEAD}
 
 func _ready() -> void:
-	pass
+	random_generator()
 	
-func _physics_process(delta: float) -> void:
+	
+func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y = gravity
 		velocity.x = 0
-		
-		
-	
-	player = Global.playerBody
-	
 
-	Global.frogDamageZone = $DmgHitbox
-	Global.frogDamageAmount = 5
-	
-	move(delta)
+	if health <= 0:
+		current_state = slime_states.DEAD
+
+	match current_state:
+		slime_states.IDLE:
+			idle()
+		slime_states.RIGHT:
+			move_right()
+		slime_states.LEFT:
+			move_left()
+		slime_states.DEAD:
+			dead()
+					
 	move_and_slide()
 	
-func move(delta):
-	if !slime_dead:
-		if !slime_chasing:
-			velocity += dir * speed * delta
-		elif slime_chasing and !taking_damage:
-			var dir_to_player = position.direction_to(player.position) * speed
-			velocity.x = dir_to_player.x
-			dir.x = abs(velocity.x) / velocity.x
-		elif taking_damage:
-			var knockback_dir = position.direction_to(player.position) * knockback_force
-			velocity.x = knockback_dir.x
-		is_roaming = true
-	elif slime_dead:
+func idle():
+	if is_on_floor():
 		velocity.x = 0
-	
-func handle_animation():
-	if !slime_dead && !taking_damage && !dealing_damage:
+		$AnimationPlayer.play("idle")
+
+func move_right():
+	if is_on_floor():
+		velocity = Vector2.RIGHT * speed
 		$AnimationPlayer.play("walk")
-		if dir.x == 1:
-			Sprite2D.flip_h = true
-		elif dir.x == -1:
-			Sprite2D.flip_h = false
-	elif !slime_dead && taking_damage && !dealing_damage:
-		$AnimationPlayer.play("hurt")
-		await get_tree().create_timer(0.7).timeout
-		taking_damage = false
-	elif slime_dead and is_roaming:
-		is_roaming = false
-		$AnimationPlayer.play("dead")
-		await get_tree().create_timer(0.5).timeout
-		handle_death()
-	elif !slime_dead && dealing_damage:
-		$AnimationPlayer.play("attack")
+		$Sprite2D.flip_h = true
+
+func move_left():
+	if is_on_floor():
+		velocity = Vector2.LEFT * speed
+		$AnimationPlayer.play("walk")
+		$Sprite2D.flip_h = false
 		
-func handle_death():
-	self.queue_free()
+func dead():
+	$AnimationPlayer.play("dead")
+	await $AnimationPlayer.animation_finished
 	
-func _on_direction_timer_timeout():
-	$DirectionTimer.wait_time = choose([1.5, 2.0, 2.5, 3.0])
-	if !slime_chasing:
-		dir = choose([Vector2.RIGHT,Vector2.LEFT])
-		velocity.x = 0
+
+func random_generator():
+	dir = randi() % 3
+	random_dir()
+	print(dir)
 	
-func choose(array):
-	array.shuffle()
-	return array.first
-	
-func _on_slime_hitbox_area_entered(area: Area2D) -> void:
-	var damage = Global.playerDamageAmount
-	if area == Global.playerDamageZone:
-		take_damage(damage)
-		
-func take_damage(damage):
-	Health -= damage
-	taking_damage = true
-	if Health <= health_min:
-		Health = health_min
-		slime_dead = true
+func random_dir():
+	match dir:
+		0:
+			current_state = slime_states.IDLE
+		1:
+			current_state = slime_states.RIGHT
+		2:
+			current_state = slime_states.LEFT
 
 
-func _on_dmg_hitbox_area_entered(area: Area2D) -> void:
-	if area == Global.playerHitbox:
-		dealing_damage = true
-		get_tree().create_timer(1)
-		dealing_damage = false
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("sword"):
+		health -= 1
+
+
+func _on_timer_timeout() -> void:
+	random_generator()
+	$Timer.start

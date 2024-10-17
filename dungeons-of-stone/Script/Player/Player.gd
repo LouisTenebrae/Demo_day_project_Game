@@ -25,11 +25,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if player_data.life <= 0:
+		current_state = player_state.DEAD
+	
+	
 	match current_state:
 		player_state.MOVE:
 			movement(delta)
 		player_state.SWORD:
 			sword(delta)
+		player_state.DEAD:
+			dead()
 
 func movement(delta):
 	input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -86,6 +92,18 @@ func gravity_force():
 func sword(delta):
 	$KnightPlayer.play("attack1")
 	input_movement(delta)
+
+func apply_damage(damage):
+	$knightPlayer.play("hit")
+	player_data.life -= damage
+
+func dead():
+	$AnimSprite.play("death")
+	velocity.x = 0
+	await $AnimSprite.animation_finished
+	player_data.life = 4
+	if get_tree:
+		get_tree().reload_current_scene()
 
 func input_movement(delta):
 	input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")

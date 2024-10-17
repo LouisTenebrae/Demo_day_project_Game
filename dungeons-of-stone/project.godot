@@ -24,7 +24,6 @@ DamageHitbox="*res://Script/Interactables/damage_hitbox.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -34,6 +33,10 @@ project/assembly_name="Dungeons of Stone"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
+[global_group]
+
+sword="Sword area"
 
 [input]
 
@@ -49,6 +52,7 @@ ui_attack={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Sword"
 2d_physics/layer_4="Interactables"
+2d_physics/layer_5="Enemies"
 
 [rendering]
 

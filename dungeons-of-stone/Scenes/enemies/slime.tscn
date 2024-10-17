@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://co4qh35dnffsq" path="res://sprites/Enemies/Slime/slime-Sheet.png" id="1_3au6y"]
 [ext_resource type="Script" path="res://Script/Interactables/enemies/slime.gd" id="1_gqjhj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kwbq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0hej"]
 size = Vector2(23, 14)
 
 [sub_resource type="Animation" id="Animation_xhij3"]
@@ -11,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +38,7 @@ resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,14 +65,28 @@ resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333),
+"times": PackedFloat32Array(0, 0.2, 0.333333, 0.466667, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [16, 17, 18, 19, 20]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.933333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_gkk5q"]
@@ -81,7 +95,7 @@ length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -97,7 +111,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -113,7 +127,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -133,20 +147,19 @@ _data = {
 "walk": SubResource("Animation_7ntkb")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1p2a"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0hej"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kwbq"]
 size = Vector2(23, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1p2a"]
 
 [node name="Slime" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_gqjhj")
+health = 2
 
-[node name="SlimeHitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4)
-shape = SubResource("RectangleShape2D_3kwbq")
+shape = SubResource("RectangleShape2D_h0hej")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -154,14 +167,22 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_3au6y")
 hframes = 8
 vframes = 3
 frame = 1
 
+[node name="SlimeHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox"]
+position = Vector2(0.5, 4)
+shape = SubResource("RectangleShape2D_3kwbq")
+debug_color = Color(0.416289, 0.604974, 0, 0.42)
+
 [node name="DmgHitbox" type="Area2D" parent="."]
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DmgHitbox"]
 position = Vector2(-16, 2)
@@ -169,11 +190,7 @@ shape = SubResource("RectangleShape2D_n1p2a")
 disabled = true
 debug_color = Color(0.964706, 0, 0.211765, 0.419608)
 
-[node name="DirectionTimer" type="Timer" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 4)
-shape = SubResource("RectangleShape2D_h0hej")
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_area_entered"]
 [connection signal="area_entered" from="DmgHitbox" to="." method="_on_dmg_hitbox_area_entered"]
