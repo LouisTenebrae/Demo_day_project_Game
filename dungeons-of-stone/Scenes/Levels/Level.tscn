@@ -15161,6 +15161,5 @@ tile_map_data = PackedByteArray("AACDABoAAAAGAA0AAACDABsAAAAGAA4AAACDABwAAAAGAA8
 tile_set = SubResource("TileSet_qglvf")
 
 [node name="FadeArea" parent="hiddenarea1" instance=ExtResource("8_vqef0")]
-visible = false
 position = Vector2(2071, 402)
 scale = Vector2(6.95673, 8.88157)

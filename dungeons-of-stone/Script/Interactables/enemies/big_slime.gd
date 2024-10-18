@@ -76,7 +76,7 @@ func random_dir():
 			current_state = slime_states.LEFT
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
+func _on_slime_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
 		health -= 1
 

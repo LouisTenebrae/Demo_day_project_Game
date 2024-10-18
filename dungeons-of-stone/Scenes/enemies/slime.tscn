@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1vbyd10b2vb1"]
+[gd_scene load_steps=14 format=3 uid="uid://c1vbyd10b2vb1"]
 
 [ext_resource type="Texture2D" uid="uid://co4qh35dnffsq" path="res://sprites/Enemies/Slime/slime-Sheet.png" id="1_3au6y"]
 [ext_resource type="Script" path="res://Script/Interactables/enemies/slime.gd" id="1_gqjhj"]
@@ -54,10 +54,10 @@ tracks/1/path = NodePath("DmgHitbox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.5, 0.7, 0.966667, 1),
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.8, 0.833333, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, false, false, false, true]
+"values": [true, false, false, false, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_m7lj0"]
@@ -147,12 +147,16 @@ _data = {
 "walk": SubResource("Animation_7ntkb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ptdg"]
+size = Vector2(20, 15.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kwbq"]
 size = Vector2(23, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1p2a"]
 
 [node name="Slime" type="CharacterBody2D"]
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_gqjhj")
 health = 2
@@ -174,6 +178,13 @@ hframes = 8
 vframes = 3
 frame = 1
 
+[node name="aim" type="Area2D" parent="."]
+
+[node name="aim" type="CollisionShape2D" parent="aim"]
+position = Vector2(-16, 4.25)
+shape = SubResource("RectangleShape2D_3ptdg")
+debug_color = Color(0.866937, 0.0962503, 0.822639, 0.42)
+
 [node name="SlimeHitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox"]
@@ -191,5 +202,17 @@ disabled = true
 debug_color = Color(0.964706, 0, 0.211765, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
 
+[node name="LeftRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-40, 0)
+
+[node name="RigthRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(40, 0)
+
+[connection signal="body_entered" from="aim" to="." method="_on_aim_body_entered"]
 [connection signal="area_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
