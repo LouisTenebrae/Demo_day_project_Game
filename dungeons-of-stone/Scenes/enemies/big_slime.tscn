@@ -1,0 +1,169 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyfhohk85rfo1"]
+
+[ext_resource type="Script" path="res://Script/Interactables/enemies/big_slime.gd" id="1_2iwld"]
+[ext_resource type="Texture2D" uid="uid://co4qh35dnffsq" path="res://sprites/Enemies/Slime/slime-Sheet.png" id="2_tpbvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5frpc"]
+size = Vector2(23, 14)
+
+[sub_resource type="Animation" id="Animation_xhij3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_e0fnm"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.7, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_m7lj0"]
+resource_name = "dead"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gkk5q"]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id="Animation_t3unv"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.466667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_7ntkb"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_22f83"]
+_data = {
+"RESET": SubResource("Animation_xhij3"),
+"attack": SubResource("Animation_e0fnm"),
+"dead": SubResource("Animation_m7lj0"),
+"hurt": SubResource("Animation_gkk5q"),
+"idle": SubResource("Animation_t3unv"),
+"walk": SubResource("Animation_7ntkb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26kse"]
+size = Vector2(21.8, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f784"]
+size = Vector2(10.4, 12)
+
+[node name="BigSlime" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+collision_mask = 2
+script = ExtResource("1_2iwld")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 4)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_5frpc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_22f83")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("2_tpbvy")
+hframes = 8
+vframes = 3
+frame = 1
+
+[node name="hitbox" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 3
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0.499999, 3.9)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_26kse")
+debug_color = Color(0.014367, 0.651051, 0, 0.42)
+
+[node name="attack" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(-12.2, 4.8)
+shape = SubResource("RectangleShape2D_3f784")
+debug_color = Color(0.964706, 0, 0.211765, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

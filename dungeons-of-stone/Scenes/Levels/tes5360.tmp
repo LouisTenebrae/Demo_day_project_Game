@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://dylg546r8hq6a" path="res://sprites/Tilesets/decorations/rock_2.png" id="37_q6o83"]
 [ext_resource type="Texture2D" uid="uid://duqhj80gypaxt" path="res://sprites/Tilesets/decorations/rock_3.png" id="38_4n5xw"]
 [ext_resource type="Texture2D" uid="uid://cn1xnnlsln5wx" path="res://sprites/Tilesets/decorations/shop.png" id="39_t5ckx"]
-[ext_resource type="PackedScene" uid="uid://cyfhohk85rfo1" path="res://Scenes/enemies/big_slime.tscn" id="40_jgho5"]
+[ext_resource type="PackedScene" uid="uid://c1vbyd10b2vb1" path="res://Scenes/enemies/slime.tscn" id="40_fabio"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aiura"]
 texture = ExtResource("2_qoc1m")
@@ -17511,12 +17511,10 @@ sources/10 = SubResource("TileSetAtlasSource_j76ie")
 sources/11 = SubResource("TileSetAtlasSource_8slkt")
 
 [node name="TestLevel" type="Node2D"]
+position = Vector2(577, 324)
 
 [node name="KnightPlayer" parent="." instance=ExtResource("1_8kf52")]
-position = Vector2(88, 12)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+position = Vector2(133, 4)
 
 [node name="TileMapGround" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -17529,5 +17527,5 @@ tile_set = SubResource("TileSet_1gbwq")
 [node name="TileMapDecor" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_5j187")
 
-[node name="BigSlime" parent="." instance=ExtResource("40_jgho5")]
-health = 1
+[node name="Slime" parent="." instance=ExtResource("40_fabio")]
+position = Vector2(-22, 25)
