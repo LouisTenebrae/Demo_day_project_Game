@@ -17512,10 +17512,7 @@ sources/11 = SubResource("TileSetAtlasSource_8slkt")
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="BigSlime" parent="." instance=ExtResource("40_jgho5")]
-health = 1
-
-[node name="Player" parent="." instance=ExtResource("1_8kf52")]
+[node name="KnightPlayer" parent="." instance=ExtResource("1_8kf52")]
 position = Vector2(244, 10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -17531,3 +17528,6 @@ tile_set = SubResource("TileSet_1gbwq")
 
 [node name="TileMapDecor" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_5j187")
+
+[node name="BigSlime" parent="." instance=ExtResource("40_jgho5")]
+health = 1

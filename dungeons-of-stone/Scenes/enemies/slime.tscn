@@ -181,7 +181,7 @@ position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_3kwbq")
 debug_color = Color(0.416289, 0.604974, 0, 0.42)
 
-[node name="DmgHitbox" type="Area2D" parent="."]
+[node name="DmgHitbox" type="Area2D" parent="." groups=["attack"]]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DmgHitbox"]
@@ -193,4 +193,3 @@ debug_color = Color(0.964706, 0, 0.211765, 0.419608)
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="SlimeHitbox" to="." method="_on_slime_hitbox_area_entered"]
-[connection signal="area_entered" from="DmgHitbox" to="." method="_on_dmg_hitbox_area_entered"]

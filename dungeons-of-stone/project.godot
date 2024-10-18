@@ -37,6 +37,8 @@ enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 [global_group]
 
 sword="Sword area"
+attack=""
+Player="Player Node"
 
 [input]
 

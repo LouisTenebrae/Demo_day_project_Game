@@ -16,10 +16,7 @@ enum player_state {MOVE, SWORD, DEAD}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sword/CollisionSword.disabled = true
-	Global.playerBody = self
-	Global.playerDamageAmount = 5
-	Global.playerDamageZone = $Sword/CollisionSword
-	Global.playerHitbox = $CollisionShape2D
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -91,16 +88,13 @@ func sword(delta):
 	$KnightPlayer.play("attack1")
 	input_movement(delta)
 
-func apply_damage(damage):
-	$knightPlayer.play("hit")
-	player_data.life -= damage
 
 func dead():
-	$AnimSprite.play("death")
+	$KnightPlayer.play("death")
 	velocity.x = 0
-	await $AnimSprite.animation_finished
+	await $KnightPlayer.animation_finished
 	player_data.life = 4
-	if get_tree:
+	if get_tree():
 		get_tree().reload_current_scene()
 
 func input_movement(delta):
@@ -123,3 +117,11 @@ func input_movement(delta):
 
 func reset_state():
 	current_state = player_state.MOVE
+
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("attack"):
+		player_data.life -= 1
+		
