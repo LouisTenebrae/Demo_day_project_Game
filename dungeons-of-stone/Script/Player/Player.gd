@@ -13,11 +13,9 @@ var jump_count = 0
 var current_state = player_state.MOVE
 enum player_state {MOVE, SWORD, DEAD}
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sword/CollisionSword.disabled = true
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
