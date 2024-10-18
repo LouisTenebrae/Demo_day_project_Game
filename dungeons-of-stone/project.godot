@@ -11,15 +11,19 @@ config_version=5
 [application]
 
 config/name="Dungeons of Stone"
-run/main_scene="res://Scenes/Levels/Level.tscn"
+run/main_scene="res://Scenes/title_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.1615, 0.0051022, 0.00564223, 1)
 boot_splash/image="res://DoSTitleScreen.png"
 config/icon="res://pixil-frame-0 (1).png"
 
+[autoload]
+
+Global="*res://Script/global.gd"
+DamageHitbox="*res://Script/Interactables/damage_hitbox.gd"
+
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -29,6 +33,10 @@ project/assembly_name="Dungeons of Stone"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
+[global_group]
+
+sword="Sword area"
 
 [input]
 
@@ -44,6 +52,7 @@ ui_attack={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Sword"
 2d_physics/layer_4="Interactables"
+2d_physics/layer_5="Enemies"
 
 [rendering]
 

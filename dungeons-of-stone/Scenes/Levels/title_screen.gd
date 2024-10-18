@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene("test_level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level.tscn")
 	
 	
 
