@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ch4c1h40wnuqp"]
+[gd_scene load_steps=45 format=4 uid="uid://ch4c1h40wnuqp"]
 
 [ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_i0jf1"]
 [ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="2_l6ud7"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bbw3l7ns3qacb" path="res://sprites/Backgrounds/MountainsLayers/far-clouds.png" id="13_0oop0"]
 [ext_resource type="Texture2D" uid="uid://nqmti2hhd4h0" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background4a.png" id="13_5sg85"]
 [ext_resource type="Texture2D" uid="uid://clhiy7ba5in3e" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/props2.png" id="21_80dnc"]
+[ext_resource type="PackedScene" uid="uid://c1vbyd10b2vb1" path="res://Scenes/enemies/slime.tscn" id="23_c3act"]
+[ext_resource type="PackedScene" uid="uid://cyfhohk85rfo1" path="res://Scenes/enemies/big_slime.tscn" id="24_7l7t1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lvmv"]
 texture = ExtResource("5_mwc0b")
@@ -15102,11 +15104,16 @@ texture = ExtResource("5_mwc0b")
 sources/0 = SubResource("TileSetAtlasSource_qtbt0")
 
 [node name="Level" type="Node2D"]
-position = Vector2(-96, -76)
+position = Vector2(-384, -24)
+metadata/_edit_vertical_guides_ = [1384.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(867, 321)
 scale = Vector2(1.79627e+14, 2.58135e+07)
+zoom = Vector2(2.5, 2.5)
+limit_left = 0
+limit_top = 0
+limit_bottom = 1168
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("1_i0jf1")
@@ -15119,12 +15126,10 @@ script = ExtResource("3_ji40s")
 
 [node name="Life" type="Sprite2D" parent="GUI"]
 texture_filter = 1
-position = Vector2(56, 40)
+position = Vector2(40, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("4_lia6q")
 hframes = 5
-
-[node name="Sprite2D" type="Sprite2D" parent="GUI"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(14, 24)
@@ -15152,3 +15157,18 @@ tile_set = SubResource("TileSet_qglvf")
 [node name="FadeArea" parent="hiddenarea1" instance=ExtResource("8_vqef0")]
 position = Vector2(2089, 421)
 scale = Vector2(7.06296, -8.45965)
+
+[node name="Slime" parent="." instance=ExtResource("23_c3act")]
+position = Vector2(2728, 432)
+
+[node name="Slime2" parent="." instance=ExtResource("23_c3act")]
+position = Vector2(3040, 421)
+
+[node name="Slime3" parent="." instance=ExtResource("23_c3act")]
+position = Vector2(4256, 413)
+
+[node name="Slime4" parent="." instance=ExtResource("23_c3act")]
+position = Vector2(3832, 424)
+
+[node name="BigSlime" parent="." instance=ExtResource("24_7l7t1")]
+position = Vector2(6808, 432)
