@@ -60,3 +60,4 @@ ui_attack={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.299547, 0.299547, 0.299547, 1)
