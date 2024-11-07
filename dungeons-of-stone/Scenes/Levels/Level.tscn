@@ -15804,7 +15804,7 @@ position_smoothing_enabled = true
 script = ExtResource("1_i0jf1")
 
 [node name="Player" parent="." instance=ExtResource("2_l6ud7")]
-position = Vector2(8752, 321)
+position = Vector2(600, 344)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource("3_ji40s")
