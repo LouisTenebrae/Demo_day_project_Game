@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
-		velocity.y = gravity
+		velocity.y = gravity * speed
 		velocity.x = 0
 
 	if health <= 0:

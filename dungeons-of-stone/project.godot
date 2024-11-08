@@ -24,6 +24,8 @@ DamageHitbox="*res://Script/Interactables/damage_hitbox.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -60,3 +62,4 @@ ui_attack={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.299547, 0.299547, 0.299547, 1)

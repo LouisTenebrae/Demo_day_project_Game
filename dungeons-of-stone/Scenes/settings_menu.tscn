@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://pi4dqmwichr7"]
+
+[ext_resource type="Script" path="res://Script/UI/settings_menu.gd" id="1_5prav"]
+
+[sub_resource type="SystemFont" id="SystemFont_osg05"]
+font_names = PackedStringArray("Alkhemikal")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_12wiv"]
+default_font = SubResource("SystemFont_osg05")
+
+[sub_resource type="SystemFont" id="SystemFont_wtpun"]
+font_names = PackedStringArray("Alkhemikal")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_of1gy"]
+default_font = SubResource("SystemFont_wtpun")
+
+[sub_resource type="SystemFont" id="SystemFont_qhpwq"]
+font_names = PackedStringArray("Alkhemikal")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_pdhmp"]
+default_font = SubResource("SystemFont_qhpwq")
+
+[sub_resource type="SystemFont" id="SystemFont_n11d3"]
+font_names = PackedStringArray("Alkhemikal")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_uv13g"]
+default_font = SubResource("SystemFont_n11d3")
+
+[sub_resource type="SystemFont" id="SystemFont_7v7jx"]
+font_names = PackedStringArray("Alkhemikal")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_4b6fh"]
+default_font = SubResource("SystemFont_7v7jx")
+
+[node name="SettingsMenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5prav")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Label0" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_12wiv")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_of1gy")
+theme_override_font_sizes/font_size = 20
+text = "Resolution"
+
+[node name="ResolutionOptions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_pdhmp")
+selected = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 1
+popup/item_2/text = "1280 x 720"
+popup/item_2/id = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_of1gy")
+theme_override_font_sizes/font_size = 20
+text = "Window Mode"
+
+[node name="WindowModeOptions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_uv13g")
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed Borderless"
+popup/item_2/id = 2
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = SubResource("Theme_4b6fh")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+icon_alignment = 1
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/WindowModeOptions" to="." method="_on_window_mode_options_item_selected"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

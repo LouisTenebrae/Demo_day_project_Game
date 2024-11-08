@@ -159,7 +159,6 @@ size = Vector2(23, 14)
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_gqjhj")
-health = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4)
@@ -186,6 +185,7 @@ shape = SubResource("RectangleShape2D_3ptdg")
 debug_color = Color(0.866937, 0.0962503, 0.822639, 0.42)
 
 [node name="SlimeHitbox" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlimeHitbox"]
 position = Vector2(0.5, 4)
