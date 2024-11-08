@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 40
 @export var gravity = 10
-@export var health = 10
+@export var health = 2
 var dir
 
 var current_state
@@ -110,4 +110,5 @@ func _on_aim_body_entered(body: Node2D) -> void:
 
 func _on_slime_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
+		print("Receiving damage")
 		health -= 1
