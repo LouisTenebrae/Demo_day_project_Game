@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://digxfma13iteb"]
+[gd_scene load_steps=130 format=3 uid="uid://digxfma13iteb"]
 
 [ext_resource type="Script" path="res://Script/Player/Player.gd" id="1_dh51k"]
 [ext_resource type="Texture2D" uid="uid://d3qeo81ciuaat" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="1_vtabd"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dty6x57m8l1sa" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_Death.png" id="15_j5l3x"]
 [ext_resource type="Texture2D" uid="uid://dmgyjbac6hevh" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_WallHang.png" id="17_mupcv"]
 [ext_resource type="Texture2D" uid="uid://dc3xaa1ptkvmy" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_WallSlide.png" id="18_iy1v8"]
+[ext_resource type="AudioStream" uid="uid://bi1bp8s470r33" path="res://audio/jumping.mp3" id="19_fka8u"]
+[ext_resource type="AudioStream" uid="uid://dj7hfupwftvpa" path="res://audio/sword_slash.mp3" id="20_y1evd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44eyj"]
 radius = 9.0
@@ -1304,5 +1306,13 @@ debug_color = Color(0.188235, 0.627451, 0.235294, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="SFX_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_fka8u")
+volume_db = 16.0
+
+[node name="sword-SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_y1evd")
+volume_db = 3.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

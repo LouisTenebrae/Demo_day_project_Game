@@ -1,5 +1,8 @@
 class_name Player extends CharacterBody2D
 
+@onready var sfx_jump: AudioStreamPlayer2D = $SFX_jump
+@onready var sword_sfx: AudioStreamPlayer2D = $"sword-SFX"
+
 var input
 @export var speed = 100.0
 @export var gravity = 10
@@ -66,10 +69,12 @@ func movement(delta):
 			$KnightPlayer.play("fall")
 		
 	if Input.is_action_pressed("ui_accept") && is_on_floor() && jump_count < max_jump:
+		sfx_jump.play()
 		jump_count += 1
 		velocity.y -= jump_force
 		velocity.x = input
 	if !is_on_floor() && Input.is_action_just_pressed("ui_accept") && jump_count < max_jump:
+		sfx_jump.play()
 		jump_count += 1
 		velocity.y -= jump_force
 		velocity.x = input
@@ -78,6 +83,7 @@ func movement(delta):
 		velocity.x = input
 
 	if Input.is_action_just_pressed("ui_attack"):
+		sword_sfx.play()
 		current_state = player_state.SWORD
 
 	gravity_force()
