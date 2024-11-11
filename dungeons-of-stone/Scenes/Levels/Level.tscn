@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://ch4c1h40wnuqp"]
+[gd_scene load_steps=56 format=4 uid="uid://ch4c1h40wnuqp"]
 
 [ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_i0jf1"]
 [ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="2_l6ud7"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vbyd10b2vb1" path="res://Scenes/enemies/slime.tscn" id="23_c3act"]
 [ext_resource type="PackedScene" uid="uid://cyfhohk85rfo1" path="res://Scenes/enemies/big_slime.tscn" id="24_7l7t1"]
 [ext_resource type="Script" path="res://Script/Interactables/Levels/next_level_trigger.gd" id="28_0audd"]
+[ext_resource type="AudioStream" uid="uid://da1h4x8m2im5d" path="res://audio/level_1_music.mp3" id="29_nva8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lvmv"]
 texture = ExtResource("5_mwc0b")
@@ -15875,5 +15876,11 @@ script = ExtResource("28_0audd")
 position = Vector2(8951, 325)
 shape = SubResource("RectangleShape2D_6v0qs")
 debug_color = Color(0.824497, 0.244161, 0.782477, 0.42)
+
+[node name="Background_music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(386, 18)
+stream = ExtResource("29_nva8q")
+autoplay = true
+max_distance = 1e+06
 
 [connection signal="body_entered" from="NextLevelTrigger" to="NextLevelTrigger" method="_on_body_entered"]
