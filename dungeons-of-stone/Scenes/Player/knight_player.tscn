@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://digxfma13iteb"]
+[gd_scene load_steps=133 format=3 uid="uid://digxfma13iteb"]
 
 [ext_resource type="Script" path="res://Script/Player/Player.gd" id="1_dh51k"]
 [ext_resource type="Texture2D" uid="uid://d3qeo81ciuaat" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="1_vtabd"]
@@ -20,6 +20,23 @@
 [ext_resource type="Texture2D" uid="uid://dc3xaa1ptkvmy" path="res://sprites/Character/Colour1/Outline/120x80_PNGSheets/_WallSlide.png" id="18_iy1v8"]
 [ext_resource type="AudioStream" uid="uid://bi1bp8s470r33" path="res://audio/jumping.mp3" id="19_fka8u"]
 [ext_resource type="AudioStream" uid="uid://dj7hfupwftvpa" path="res://audio/sword_slash.mp3" id="20_y1evd"]
+
+[sub_resource type="Shader" id="Shader_ula5w"]
+code = "shader_type canvas_item;
+
+uniform vec4 flash_color : source_color;
+uniform float flash_value : hint_range(0.0, 1.0, 0.1);
+
+void fragment() {
+	vec4 texture_color = texture(TEXTURE, UV);
+	COLOR = mix(texture_color, flash_color, flash_value);
+	COLOR.a = texture_color.a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ae54g"]
+shader = SubResource("Shader_ula5w")
+shader_parameter/flash_color = null
+shader_parameter/flash_value = null
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_44eyj"]
 radius = 9.0
@@ -567,6 +584,11 @@ _data = {
 "wall_hang": SubResource("Animation_uhkb6"),
 "wall_slide": SubResource("Animation_u25k5")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phijp"]
+shader = SubResource("Shader_ula5w")
+shader_parameter/flash_color = null
+shader_parameter/flash_value = null
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r0vut"]
 atlas = ExtResource("11_qknv2")
@@ -1266,6 +1288,7 @@ radius = 8.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+material = SubResource("ShaderMaterial_ae54g")
 collision_mask = 10
 script = ExtResource("1_dh51k")
 jump_force = 300
@@ -1281,6 +1304,7 @@ libraries = {
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_phijp")
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_sm8kx")
 animation = &"death"
