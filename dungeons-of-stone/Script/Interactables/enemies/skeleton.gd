@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 @export var speed = 40
 @export var gravity = 10
-@export var health = 2
+@export var health = 5
 var dir
 
 var current_state
 enum slime_states {IDLE, RIGHT,LEFT, CHASE, ATTACK, DEAD}
 
 func _ready() -> void:
-	$DmgHitbox/CollisionShape2D.disabled = true
+	$attack/CollisionShape2D.disabled = true
 	_on_timer_timeout()
 	
 	
@@ -44,17 +44,17 @@ func move_right():
 	if is_on_floor():
 		velocity = Vector2.RIGHT * speed
 		$AnimationPlayer.play("walk")
-		$Sprite2D.flip_h = true
-		$DmgHitbox/CollisionShape2D.position.x = 12.2
-		$aim/aim.position.x = 11
+		$AnimatedSprite2D.flip_h = false
+		$attack/CollisionShape2D.position.x = 33.75
+		$aim/aim.position.x = 33.5
 
 func move_left():
 	if is_on_floor():
 		velocity = Vector2.LEFT * speed
 		$AnimationPlayer.play("walk")
-		$Sprite2D.flip_h = false
-		$DmgHitbox/CollisionShape2D.position.x = -12.2
-		$aim/aim.position.x = -11
+		$AnimatedSprite2D.flip_h = true
+		$attack/CollisionShape2D.position.x = -33.75
+		$aim/aim.position.x = -33.5
 
 func dead():
 	velocity.x = 0
@@ -75,6 +75,11 @@ func random_dir():
 			current_state = slime_states.RIGHT
 		2:
 			current_state = slime_states.LEFT
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("sword"):
+		health -= 1
 
 
 func _on_timer_timeout() -> void:
@@ -99,7 +104,7 @@ func chase_right():
 
 func attack():
 	velocity.x = 0
-	$AnimationPlayer.play("attack")
+	$AnimationPlayer.play("attack3")
 	await $AnimationPlayer.animation_finished
 	_on_timer_timeout()
 
@@ -107,9 +112,3 @@ func attack():
 func _on_aim_body_entered(body: Node2D) -> void:
 	if body is Player:
 		current_state = slime_states.ATTACK
-
-
-func _on_slime_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("sword"):
-		print("Receiving damage")
-		health -= 1
