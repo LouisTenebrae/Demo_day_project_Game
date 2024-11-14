@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://qlv6msbs3u2n"]
+[gd_scene load_steps=43 format=3 uid="uid://qlv6msbs3u2n"]
 
 [ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_4snxq"]
 [ext_resource type="Script" path="res://Script/UI/GUI.gd" id="2_qg56a"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dexsh51fkjr7v" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background3.png" id="19_1xbqx"]
 [ext_resource type="AudioStream" uid="uid://noin5xvqbn8s" path="res://audio/level_2_music.mp3" id="21_b0dk8"]
 [ext_resource type="PackedScene" uid="uid://cj37sum7uypuk" path="res://Scenes/enemies/skeleton.tscn" id="22_7sdho"]
+[ext_resource type="PackedScene" uid="uid://bi4pj5pwr324n" path="res://Scenes/Interactables/inv_barrier.tscn" id="23_ifgww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3w8n"]
 texture = ExtResource("5_v1rca")
@@ -12041,4 +12042,132 @@ max_distance = 1e+06
 
 [node name="BossSkeleton" parent="." instance=ExtResource("22_7sdho")]
 position = Vector2(297, 2123)
-health = 8
+health = 12
+
+[node name="InvBarrier" parent="." instance=ExtResource("23_ifgww")]
+position = Vector2(5099, -1638)
+
+[node name="InvBarrier" parent="InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-5105, 3233)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(271.985, 4.20471)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-693.985, -1995.2)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(145, -647)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(665, 1031)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(571.041, -12.491)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(712.488, -128.88)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(412.95, 2.12132)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(1930.1, -196.55)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(285.979, -0.445442)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(1108.58, 672.018)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-5086.9, 2651.29)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(656.657, 5.94604)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(1045.6, 1.18921)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-481.629, -110.596)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-885.289, -5.94604)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-319.346, -222.451)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(819.246, -8.43701)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(832.812, 1.19556)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-1883.15, 101.247)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(616.597, 0)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(840.043, 11.3137)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-1289.76, 644.881)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(806.215, -4.84204)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(1988.68, -1187.77)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(587.468, 5.94604)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(538.426, 285.116)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(448.153, 0)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(522.654, 32.646)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(-1043.31, -831.839)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(303.194, 4.76208)
+
+[node name="InvBarrier" parent="InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier/InvBarrier" instance=ExtResource("23_ifgww")]
+position = Vector2(109.53, 220.649)
+
+[node name="InvBarrier2" parent="." instance=ExtResource("23_ifgww")]
+position = Vector2(5231, 973)
+
+[node name="InvBarrier" parent="InvBarrier2" instance=ExtResource("23_ifgww")]
+position = Vector2(166, -1)
+
+[node name="InvBarrier3" parent="." instance=ExtResource("23_ifgww")]
+position = Vector2(-20.3865, 170.323)
+
+[node name="Skeleton2" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(-511, -451)
+
+[node name="Tower1Skel" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(-496, -1090)
+health = 10
+
+[node name="Skeleton" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(66, 125)
+
+[node name="Tower2Skel" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(5318, -1684)
+health = 30
+
+[node name="Skeleton3" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(-456, 1546)
+
+[node name="Skeleton4" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(421, 1547)

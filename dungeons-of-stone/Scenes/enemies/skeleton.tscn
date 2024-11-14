@@ -641,7 +641,7 @@ size = Vector2(36.5, 70)
 
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 6
+collision_mask = 54
 script = ExtResource("1_s5p3m")
 health = 4
 
