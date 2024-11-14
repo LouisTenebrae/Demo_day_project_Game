@@ -112,3 +112,4 @@ func attack():
 func _on_aim_body_entered(body: Node2D) -> void:
 	if body is Player:
 		current_state = slime_states.ATTACK
+		

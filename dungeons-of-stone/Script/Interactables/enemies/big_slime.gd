@@ -79,6 +79,7 @@ func random_dir():
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
+		print("Taking damage")
 		health -= 1
 
 
