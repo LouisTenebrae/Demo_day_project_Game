@@ -331,7 +331,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_or5d1"]
-length = 0.2
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -340,10 +340,10 @@ tracks/0/path = NodePath("AnimSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 0, 0, 0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -356,6 +356,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["hit"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_state"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_gon7p"]
@@ -1307,7 +1321,7 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_phijp")
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_sm8kx")
-animation = &"death"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="Sword" type="Area2D" parent="." groups=["sword"]]
