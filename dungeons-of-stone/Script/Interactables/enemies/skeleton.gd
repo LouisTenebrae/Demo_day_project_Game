@@ -20,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 	if health <= 0:
 		current_state = slime_states.DEAD
+		Global.player_exp += 0.06
 
 	match current_state:
 		slime_states.IDLE:
@@ -79,7 +80,7 @@ func random_dir():
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
-		health -= 1
+		health -= 1 * Global.player_level
 
 
 func _on_timer_timeout() -> void:
