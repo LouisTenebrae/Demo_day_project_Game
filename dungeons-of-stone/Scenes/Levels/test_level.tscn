@@ -1,6 +1,7 @@
-[gd_scene load_steps=82 format=4 uid="uid://b4bipm8bu3fad"]
+[gd_scene load_steps=83 format=4 uid="uid://b4bipm8bu3fad"]
 
 [ext_resource type="PackedScene" uid="uid://digxfma13iteb" path="res://Scenes/Player/knight_player.tscn" id="1_8kf52"]
+[ext_resource type="PackedScene" uid="uid://bi4pj5pwr324n" path="res://Scenes/Interactables/inv_barrier.tscn" id="2_c407j"]
 [ext_resource type="Texture2D" uid="uid://dn7pf4tqri5yg" path="res://sprites/Tilesets/oak_woods_tileset.png" id="2_qoc1m"]
 [ext_resource type="Texture2D" uid="uid://4mtbw0mkn8nn" path="res://sprites/Tilesets/tileset.png" id="3_nfbee"]
 [ext_resource type="Texture2D" uid="uid://dphjkh3l8dn0f" path="res://sprites/Tilesets/Old-dark-Castle-tileset-Files/PNG/old-dark-castle-interior-tileset.png" id="4_558ax"]
@@ -17512,8 +17513,11 @@ sources/11 = SubResource("TileSetAtlasSource_8slkt")
 
 [node name="TestLevel" type="Node2D"]
 
+[node name="InvBarrier" parent="." instance=ExtResource("2_c407j")]
+position = Vector2(-128, 36)
+
 [node name="Player" parent="." instance=ExtResource("1_8kf52")]
-position = Vector2(183, 15)
+position = Vector2(261, -78)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -17530,3 +17534,6 @@ tile_set = SubResource("TileSet_1gbwq")
 tile_set = SubResource("TileSet_5j187")
 
 [node name="BigSlime" parent="." instance=ExtResource("40_cyj3s")]
+
+[node name="InvBarrier2" parent="." instance=ExtResource("2_c407j")]
+position = Vector2(95, 38)

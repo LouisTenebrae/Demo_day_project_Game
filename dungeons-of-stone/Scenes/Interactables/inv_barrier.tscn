@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi4pj5pwr324n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iji24"]
+size = Vector2(48, 40)
+
+[node name="InvBarrier" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_iji24")
+debug_color = Color(0.710608, 0.485758, 7.70092e-07, 0.42)

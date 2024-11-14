@@ -157,7 +157,7 @@ size = Vector2(23, 14)
 
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 22
+collision_mask = 54
 script = ExtResource("1_gqjhj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
