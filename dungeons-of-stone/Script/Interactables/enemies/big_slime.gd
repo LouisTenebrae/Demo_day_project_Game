@@ -57,6 +57,7 @@ func move_left():
 		$aim/aim.position.x = -11
 
 func dead():
+	velocity.x = 0
 	$AnimationPlayer.play("dead")
 	await $AnimationPlayer.animation_finished
 	
@@ -76,8 +77,9 @@ func random_dir():
 			current_state = slime_states.LEFT
 
 
-func _on_slime_hitbox_area_entered(area: Area2D) -> void:
+func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
+		print("Taking damage")
 		health -= 1
 
 

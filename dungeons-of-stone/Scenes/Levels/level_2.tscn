@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://qlv6msbs3u2n"]
+[gd_scene load_steps=42 format=3 uid="uid://qlv6msbs3u2n"]
 
 [ext_resource type="Script" path="res://Script/Control/Camera.gd" id="1_4snxq"]
 [ext_resource type="Script" path="res://Script/UI/GUI.gd" id="2_qg56a"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c7cbo3soenpp7" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background2.png" id="18_r6s37"]
 [ext_resource type="Texture2D" uid="uid://dexsh51fkjr7v" path="res://sprites/Backgrounds/PixelFantasy_Caves_1.0/background3.png" id="19_1xbqx"]
 [ext_resource type="AudioStream" uid="uid://noin5xvqbn8s" path="res://audio/level_2_music.mp3" id="21_b0dk8"]
+[ext_resource type="PackedScene" uid="uid://cj37sum7uypuk" path="res://Scenes/enemies/skeleton.tscn" id="22_7sdho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3w8n"]
 texture = ExtResource("5_v1rca")
@@ -12037,3 +12038,7 @@ speed = 150.0
 stream = ExtResource("21_b0dk8")
 autoplay = true
 max_distance = 1e+06
+
+[node name="BossSkeleton" parent="." instance=ExtResource("22_7sdho")]
+position = Vector2(297, 2123)
+health = 8

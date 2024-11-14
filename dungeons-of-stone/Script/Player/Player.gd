@@ -14,7 +14,7 @@ var jump_count = 0
 
 # STATE MACHINE
 var current_state = player_state.MOVE
-enum player_state {MOVE, SWORD, DEAD}
+enum player_state {MOVE, SWORD, HIT, DEAD}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -126,10 +126,13 @@ func input_movement(delta):
 func reset_state():
 	current_state = player_state.MOVE
 
-
+func hit():
+	current_state = player_state.HIT
+	$KnightPlayer.play("hit")
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("attack"):
 		player_data.life -= 1
+		hit()
 		

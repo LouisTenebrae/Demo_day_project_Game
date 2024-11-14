@@ -57,6 +57,7 @@ func move_left():
 		$aim/aim.position.x = -11
 
 func dead():
+	velocity.x = 0
 	$AnimationPlayer.play("dead")
 	await $AnimationPlayer.animation_finished
 	

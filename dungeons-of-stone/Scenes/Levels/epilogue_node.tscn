@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://8t0qpqtxgx72"]
+
+[sub_resource type="SystemFont" id="SystemFont_jbvpg"]
+
+[sub_resource type="Theme" id="Theme_3oe5u"]
+default_font = SubResource("SystemFont_jbvpg")
+
+[node name="EpilogueNode" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchor_right = 0.9
+anchor_bottom = 0.901
+offset_left = 1.0
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 39.0
+offset_top = 42.0
+offset_right = 1235.0
+offset_bottom = 683.0
+theme = SubResource("Theme_3oe5u")
+text = "And with that, the top of the tower was conquered after so long once again.
+You trekked a perilous journey.
+You defeated many a challenge.
+
+As you look out that tower unto the views below and far, your filled with a sense of pride.
+
+This is your "

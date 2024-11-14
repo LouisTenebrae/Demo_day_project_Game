@@ -1,6 +1,7 @@
-[gd_scene load_steps=63 format=3 uid="uid://cj37sum7uypuk"]
+[gd_scene load_steps=68 format=3 uid="uid://cj37sum7uypuk"]
 
 [ext_resource type="Texture2D" uid="uid://e1moikkiqgdj" path="res://sprites/Enemies/Skeleton_Warrior/Attack_1.png" id="1_7wb66"]
+[ext_resource type="Script" path="res://Script/Interactables/enemies/skeleton.gd" id="1_s5p3m"]
 [ext_resource type="Texture2D" uid="uid://crrsvtkdst3hg" path="res://sprites/Enemies/Skeleton_Warrior/Attack_2.png" id="2_luk77"]
 [ext_resource type="Texture2D" uid="uid://x6bba55qvc0p" path="res://sprites/Enemies/Skeleton_Warrior/Attack_3.png" id="3_tuar2"]
 [ext_resource type="Texture2D" uid="uid://c3ousqinb6n33" path="res://sprites/Enemies/Skeleton_Warrior/Dead.png" id="4_ggpag"]
@@ -353,6 +354,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_mjgsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_wlmqg"]
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -432,6 +448,18 @@ tracks/1/keys = {
 "update": 1,
 "values": ["attack3"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_vyqnt"]
 length = 0.8
@@ -458,6 +486,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["dead"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.766667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_bhtjd"]
@@ -573,6 +615,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f4w6x"]
 _data = {
+"RESET": SubResource("Animation_mjgsw"),
 "attack1": SubResource("Animation_wlmqg"),
 "attack2": SubResource("Animation_qew1b"),
 "attack3": SubResource("Animation_6nhy0"),
@@ -585,15 +628,27 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vwu73"]
 radius = 12.0
-height = 52.0
+height = 60.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x22eu"]
+size = Vector2(37, 70)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qyal5"]
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a5m8"]
+size = Vector2(36.5, 70)
+
+[node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 6
+script = ExtResource("1_s5p3m")
+health = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ubo2s")
 animation = &"idle"
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -604,3 +659,40 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)
 shape = SubResource("CapsuleShape2D_vwu73")
+
+[node name="aim" type="Area2D" parent="."]
+
+[node name="aim" type="CollisionShape2D" parent="aim"]
+position = Vector2(33.5, 29)
+shape = SubResource("RectangleShape2D_x22eu")
+debug_color = Color(0.483262, 0.115138, 0.703988, 0.42)
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 34)
+shape = SubResource("CapsuleShape2D_qyal5")
+debug_color = Color(0.145266, 0.645632, 0, 0.42)
+
+[node name="attack" type="Area2D" parent="." groups=["attack"]]
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+position = Vector2(33.75, 29)
+shape = SubResource("RectangleShape2D_0a5m8")
+debug_color = Color(0.752941, 0, 0, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="LeftRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 43)
+target_position = Vector2(-84, 0)
+
+[node name="RigthRayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 43)
+target_position = Vector2(84, 0)
+
+[connection signal="body_entered" from="aim" to="." method="_on_aim_body_entered"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

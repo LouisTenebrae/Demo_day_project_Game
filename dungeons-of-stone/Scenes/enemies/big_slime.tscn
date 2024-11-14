@@ -157,13 +157,14 @@ size = Vector2(12.8, 8.8)
 size = Vector2(21.8, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f784"]
-size = Vector2(17.4, 12)
+size = Vector2(17.4, 9)
 
 [node name="BigSlime" type="CharacterBody2D"]
 scale = Vector2(5, 5)
-collision_layer = 8
-collision_mask = 3
+collision_layer = 16
+collision_mask = 22
 script = ExtResource("1_2iwld")
+health = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4)
@@ -203,7 +204,8 @@ debug_color = Color(0.014367, 0.651051, 0, 0.42)
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
-position = Vector2(-8.7, 4.8)
+position = Vector2(-8.7, 6.3)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3f784")
 disabled = true
 debug_color = Color(0.964706, 0, 0.211765, 0.419608)
