@@ -20,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 
 	if health <= 0:
 		current_state = slime_states.DEAD
+		Global.player_exp += 0.02
 
 	match current_state:
 		slime_states.IDLE:
@@ -112,4 +113,4 @@ func _on_aim_body_entered(body: Node2D) -> void:
 func _on_slime_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
 		print("Receiving damage")
-		health -= 1
+		health -= 1 * Global.player_level

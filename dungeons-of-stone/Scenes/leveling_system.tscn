@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://domhye0v68fe5"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_8q38n"]
+[ext_resource type="Script" path="res://Scenes/exp.gd" id="2_a0h35"]
+
+[node name="leveling_system" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="Level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 56.0
+offset_bottom = 27.0
+script = ExtResource("1_8q38n")
+
+[node name="exp" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0.2, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 29.0
+offset_right = 128.0
+offset_bottom = 44.0
+show_percentage = false
+script = ExtResource("2_a0h35")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 29.0
+offset_right = 128.0
+offset_bottom = 44.0
+color = Color(1, 1, 1, 0.345098)
