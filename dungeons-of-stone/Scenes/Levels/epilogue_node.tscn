@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8t0qpqtxgx72"]
+[gd_scene load_steps=5 format=3 uid="uid://8t0qpqtxgx72"]
+
+[ext_resource type="Texture2D" uid="uid://cawncm4ukhhx8" path="res://sprites/Epilogue_Background.jpeg" id="1_1ucuq"]
+[ext_resource type="Script" path="res://Script/Interactables/Levels/epilogue_node.gd" id="1_4h4um"]
 
 [sub_resource type="SystemFont" id="SystemFont_jbvpg"]
 
@@ -14,19 +17,53 @@ offset_left = 1.0
 offset_bottom = 0.279968
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4h4um")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.111
+anchor_bottom = 1.109
 offset_left = 39.0
 offset_top = 42.0
-offset_right = 1235.0
-offset_bottom = 683.0
+offset_right = -43.7611
+offset_bottom = -36.741
 theme = SubResource("Theme_3oe5u")
+bbcode_enabled = true
 text = "And with that, the top of the tower was conquered after so long once again.
 You trekked a perilous journey.
 You defeated many a challenge.
 
-As you look out that tower unto the views below and far, your filled with a sense of pride.
+As you look out that tower unto the views below and far, you're filled with a sense of pride.
 
-This is your "
+This is the end of your travels.
+
+You conquered the dungeon and the tower.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[left] Press Jump to continue...[/left]"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(639.5, 360)
+scale = Vector2(0.713728, 0.703125)
+texture = ExtResource("1_1ucuq")
