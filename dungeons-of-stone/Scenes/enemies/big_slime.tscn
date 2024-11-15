@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyfhohk85rfo1"]
+[gd_scene load_steps=16 format=3 uid="uid://cyfhohk85rfo1"]
 
 [ext_resource type="Script" path="res://Script/Interactables/enemies/big_slime.gd" id="1_2iwld"]
 [ext_resource type="Texture2D" uid="uid://co4qh35dnffsq" path="res://sprites/Enemies/Slime/slime-Sheet.png" id="2_tpbvy"]
+[ext_resource type="AudioStream" uid="uid://dfken452psbnu" path="res://audio/slime_walking.mp3" id="3_6gc87"]
+[ext_resource type="AudioStream" uid="uid://du6xayhv4t1fo" path="res://audio/slime_attacking.mp3" id="4_6ggv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5frpc"]
 size = Vector2(23, 14)
@@ -220,6 +222,14 @@ target_position = Vector2(-30, 0)
 [node name="RigthRayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 7.2)
 target_position = Vector2(30, 0)
+
+[node name="walking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6gc87")
+volume_db = -9.0
+
+[node name="attacking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6ggv8")
+volume_db = -9.0
 
 [connection signal="body_entered" from="aim" to="." method="_on_aim_body_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

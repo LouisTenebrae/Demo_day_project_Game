@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var slime_walking: AudioStreamPlayer2D = $slime_walking
+@onready var slime_attack: AudioStreamPlayer2D = $slime_attack
+
 @export var speed = 40
 @export var gravity = 10
 @export var health = 2
@@ -48,6 +51,7 @@ func move_right():
 		$Sprite2D.flip_h = true
 		$DmgHitbox/CollisionShape2D.position.x = 12.2
 		$aim/aim.position.x = 11
+		slime_walking.play()
 
 func move_left():
 	if is_on_floor():
@@ -56,6 +60,7 @@ func move_left():
 		$Sprite2D.flip_h = false
 		$DmgHitbox/CollisionShape2D.position.x = -12.2
 		$aim/aim.position.x = -11
+		slime_walking.play()
 
 func dead():
 	velocity.x = 0
@@ -101,6 +106,7 @@ func chase_right():
 func attack():
 	velocity.x = 0
 	$AnimationPlayer.play("attack")
+	slime_attack.play()
 	await $AnimationPlayer.animation_finished
 	_on_timer_timeout()
 

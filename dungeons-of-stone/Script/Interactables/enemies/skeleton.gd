@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var health = 5
 var dir
 
+@onready var sword_slash: AudioStreamPlayer2D = $sword_slash
+
 var current_state
 enum slime_states {IDLE, RIGHT,LEFT, CHASE, ATTACK, DEAD}
 
@@ -106,6 +108,7 @@ func chase_right():
 func attack():
 	velocity.x = 0
 	$AnimationPlayer.play("attack3")
+	sword_slash.play()
 	await $AnimationPlayer.animation_finished
 	_on_timer_timeout()
 

@@ -136,3 +136,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		player_data.life -= 1
 		hit()
 		
+
+
+func _on_regen_timer_timeout() -> void:
+	if player_data.life < 4:
+		player_data.life += 0.5
+		if player_data.life > 4:
+			player_data.life = 4
+	if player_data.life < 0:
+		player_data.life = 0

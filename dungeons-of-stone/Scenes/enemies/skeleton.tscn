@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cj37sum7uypuk"]
+[gd_scene load_steps=69 format=3 uid="uid://cj37sum7uypuk"]
 
 [ext_resource type="Texture2D" uid="uid://e1moikkiqgdj" path="res://sprites/Enemies/Skeleton_Warrior/Attack_1.png" id="1_7wb66"]
 [ext_resource type="Script" path="res://Script/Interactables/enemies/skeleton.gd" id="1_s5p3m"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bch20nmrlp1vm" path="res://sprites/Enemies/Skeleton_Warrior/Idle.png" id="6_ioeyg"]
 [ext_resource type="Texture2D" uid="uid://c40ngehquc6x5" path="res://sprites/Enemies/Skeleton_Warrior/Run.png" id="7_2o6sx"]
 [ext_resource type="Texture2D" uid="uid://bd6tuy0j70e28" path="res://sprites/Enemies/Skeleton_Warrior/Walk.png" id="8_puqfr"]
+[ext_resource type="AudioStream" uid="uid://ciy6p8qp6c77q" path="res://audio/sword-sound-260274.mp3" id="10_w2xtj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hs1pm"]
 atlas = ExtResource("1_7wb66")
@@ -692,6 +693,10 @@ target_position = Vector2(-84, 0)
 [node name="RigthRayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, 43)
 target_position = Vector2(84, 0)
+
+[node name="sword_slash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_w2xtj")
+volume_db = -3.0
 
 [connection signal="body_entered" from="aim" to="." method="_on_aim_body_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
