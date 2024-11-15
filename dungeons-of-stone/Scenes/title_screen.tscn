@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://btrd7to8etc3p"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/title_screen.gd" id="1_jqcoo"]
+[ext_resource type="Texture2D" uid="uid://3xm8vjit6c5b" path="res://sprites/TitleScreenImg/TitleScreenBckg.jpeg" id="2_poc6f"]
+[ext_resource type="Texture2D" uid="uid://pm2ry3duila7" path="res://sprites/TitleScreenImg/pixil-frame-0 (2).png" id="3_lckim"]
+[ext_resource type="PackedScene" uid="uid://pi4dqmwichr7" path="res://Scenes/settings_menu.tscn" id="4_s0dlg"]
+
+[sub_resource type="SystemFont" id="SystemFont_4cxju"]
+font_names = PackedStringArray("Alkhemikal")
+
+[sub_resource type="Theme" id="Theme_65em7"]
+default_font = SubResource("SystemFont_4cxju")
+
+[sub_resource type="SystemFont" id="SystemFont_y7i18"]
+font_names = PackedStringArray("Alkhemikal")
+
+[sub_resource type="Theme" id="Theme_b74lo"]
+default_font = SubResource("SystemFont_y7i18")
+
+[sub_resource type="SystemFont" id="SystemFont_864b3"]
+font_names = PackedStringArray("Alkhemikal")
+
+[sub_resource type="Theme" id="Theme_mcxwm"]
+default_font = SubResource("SystemFont_864b3")
+
+[node name="TitleScreen" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchor_right = 0.9
+anchor_bottom = 0.901
+offset_left = 1.0
+offset_bottom = 0.279968
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_jqcoo")
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 605.0
+offset_top = 376.0
+offset_right = 665.0
+offset_bottom = 406.0
+theme = SubResource("Theme_65em7")
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 605.0
+offset_top = 424.0
+offset_right = 665.0
+offset_bottom = 454.0
+theme = SubResource("Theme_b74lo")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 605.0
+offset_top = 472.0
+offset_right = 665.0
+offset_bottom = 502.0
+theme = SubResource("Theme_mcxwm")
+text = "Quit"
+
+[node name="TitleScreenBckg" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(639.125, 360.375)
+scale = Vector2(0.714146, 0.702393)
+texture = ExtResource("2_poc6f")
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+position = Vector2(635, 240)
+scale = Vector2(0.8025, 0.617683)
+texture = ExtResource("3_lckim")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("4_s0dlg")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

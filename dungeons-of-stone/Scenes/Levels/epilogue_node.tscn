@@ -1,12 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://8t0qpqtxgx72"]
+[gd_scene load_steps=6 format=3 uid="uid://8t0qpqtxgx72"]
 
 [ext_resource type="Texture2D" uid="uid://cawncm4ukhhx8" path="res://sprites/Epilogue_Background.jpeg" id="1_1ucuq"]
 [ext_resource type="Script" path="res://Script/Interactables/Levels/epilogue_node.gd" id="1_4h4um"]
 
 [sub_resource type="SystemFont" id="SystemFont_jbvpg"]
+font_names = PackedStringArray("Alkhemikal")
 
 [sub_resource type="Theme" id="Theme_3oe5u"]
 default_font = SubResource("SystemFont_jbvpg")
+
+[sub_resource type="GDScript" id="GDScript_5pktg"]
+script/source = "extends RichTextLabel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print_rich(\"And with that, the top of the tower was conquered after so long once again.
+	You trekked a perilous journey.
+	You defeated many a challenge.
+	
+	As you look out that tower unto the views below and far, you're filled with a sense of pride.
+	
+	This is the end of your travels.
+	
+	You conquered the dungeon and the tower.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	[left] Press Jump to continue...[/left]\")
+"
 
 [node name="EpilogueNode" type="Control"]
 texture_filter = 1
@@ -30,6 +66,7 @@ offset_top = 42.0
 offset_right = -43.7611
 offset_bottom = -36.741
 theme = SubResource("Theme_3oe5u")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "And with that, the top of the tower was conquered after so long once again.
 You trekked a perilous journey.
@@ -57,9 +94,14 @@ You conquered the dungeon and the tower.
 
 
 
-[left] Press Jump to continue...[/left]"
+
+
+
+
+																																							Press [b]Jump[/b] to continue..."
 scroll_active = false
 autowrap_mode = 0
+script = SubResource("GDScript_5pktg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
