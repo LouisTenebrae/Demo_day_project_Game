@@ -8,7 +8,8 @@ var playerHitbox: CollisionShape2D
 var slimeDamageZone: Area2D
 var slimeDamageAmount: int
 
-# Leveling Sys
+# Leveling system
 var player_exp = 0
 var player_level = 1
-var exp_thresholds = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
+var player_max_level = 10
+var exp_thresholds = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 1]

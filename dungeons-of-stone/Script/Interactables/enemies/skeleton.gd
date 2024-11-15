@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var health = 5
 var dir
 
+@onready var sword_slash: AudioStreamPlayer2D = $sword_slash
+
 var current_state
 enum slime_states {IDLE, RIGHT,LEFT, CHASE, ATTACK, DEAD}
 
@@ -20,6 +22,7 @@ func _physics_process(_delta: float) -> void:
 
 	if health <= 0:
 		current_state = slime_states.DEAD
+		Global.player_exp += 0.06
 
 	match current_state:
 		slime_states.IDLE:
@@ -79,7 +82,7 @@ func random_dir():
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("sword"):
-		health -= 1
+		health -= 1 * Global.player_level
 
 
 func _on_timer_timeout() -> void:
@@ -105,6 +108,7 @@ func chase_right():
 func attack():
 	velocity.x = 0
 	$AnimationPlayer.play("attack3")
+	sword_slash.play()
 	await $AnimationPlayer.animation_finished
 	_on_timer_timeout()
 
